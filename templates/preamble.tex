@@ -10,8 +10,37 @@
 
 % Misc
 \usepackage{graphicx}
-\usepackage[hidelinks]{hyperref} %textopdfstring from pandoc
+%\usepackage[hidelinks]{hyperref} %textopdfstring from pandoc
+\usepackage[colorlinks=true,citecolor=blue!75!black,linkcolor=blue!75!black]{hyperref}
+\usepackage{apacite}
 \usepackage{soul} % Highlight using \hl{}
+\usepackage{listings} % package for code listings
+\usepackage{courier} % courier font for code listings
+
+
+% Style definitions for code listings
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{codestyle}{ 
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,                                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4
+}
+
+\lstset{style=codestyle}
 
 % Table
 
@@ -37,18 +66,32 @@
 \usepackage{framed}
 \let\oldquote=\quote
 \let\endoldquote=\endquote
-\renewenvironment{quote}{\begin{fquote}\advance\leftmargini -2.4em\begin{oldquote}}{\end{oldquote}\end{fquote}}
+\renewenvironment{quote}{\begin{fquote}\fontfamily{cmss}\selectfont\advance\leftmargini -2.4em\begin{oldquote}}{\end{oldquote}\end{fquote}}
 
 \usepackage{xcolor}
+%\newenvironment{fquote}
+%  {\def\FrameCommand{
+%	\fboxsep=0.6em % box to text padding
+%	\fcolorbox{black}{white}}%
+%	% the "2" can be changed to make the box smaller
+%    \MakeFramed {\advance\hsize-2\width \FrameRestore}
+%    \begin{minipage}{\linewidth}
+%  }
+%  {\end{minipage}\endMakeFramed}
+
 \newenvironment{fquote}
-  {\def\FrameCommand{
-	\fboxsep=0.6em % box to text padding
-	\fcolorbox{black}{white}}%
+{\def\FrameCommand{
+		\vrule width 3pt \hspace{10pt}}%
 	% the "2" can be changed to make the box smaller
-    \MakeFramed {\advance\hsize-2\width \FrameRestore}
-    \begin{minipage}{\linewidth}
-  }
-  {\end{minipage}\endMakeFramed}
+	\MakeFramed {\advance\hsize-\width \FrameRestore}
+	\begin{minipage}{\linewidth}
+	}
+	{\end{minipage}\endMakeFramed}
+
+%\def\FrameCommand{\vrule width 3pt \hspace{10pt}}%
+%\MakeFramed {\advance\hsize-\width \FrameRestore}}%
+%{\endMakeFramed}
+
 
 % Table styles
 
@@ -68,10 +111,10 @@
 
 %% Define that \RC and \AR should start and format the whole paragraph 
 \usepackage{suffix}
-\long\def\RC#1\par{\makebox[0pt][r]{\bf RC:\hspace{4mm}}\textbf{\textit{#1}}\par} %\RC
-\WithSuffix\long\def\RC*#1\par{\textbf{\textit{#1}}\par} %\RC*
-\long\def\AR#1\par{\makebox[0pt][r]{AR:\hspace{10pt}}\textit{#1}\par} %\AR
-\WithSuffix\long\def\AR*#1\par{\textit{#1}\par} %\AR*
+\long\def\RC#1\par{\makebox[0pt][r]{\color{gray}\bf RC:\hspace{4mm}}\textbf{\color{gray}\textit{#1}}\par} %\RC
+\WithSuffix\long\def\RC*#1\par{\textbf{\color{gray}\textit{#1}}\par} %\RC*
+\long\def\AR#1\par{\makebox[0pt][r]{AR:\hspace{10pt}}#1\par} %\AR
+\WithSuffix\long\def\AR*#1\par{#1\par} %\AR*
 
 
 %%%

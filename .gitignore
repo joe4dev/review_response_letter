@@ -1,0 +1,6 @@
+# .gitignore file for LaTeX documents
+
+*.aux
+*.log
+*.out
+

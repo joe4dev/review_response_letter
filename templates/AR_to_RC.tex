@@ -13,8 +13,20 @@
 {\Large\bf \lettertitle}\\[1em]
 {\huge \papertitle}\\[1em]
 {\authors}\\
-{\it \journal, }\texttt{doi:\doi}\\
+{\it \journal }
+% removed because articles in review aren't typically assigned DOIs
+%\texttt{doi:\doi}\\
 \hrule
 
 % Legend
-\hfill {\bfseries RC:} \textbf{\textit{Reviewer Comment}},\(\quad\) AR: \emph{Author Response}, \(\quad\square\) Manuscript text
+\hfill {\bfseries \color{gray}RC:} \textbf{\color{gray}\textit{Reviewer Comment}},\(\quad\) AR: Author Response,\(\quad\) \vrule width 3pt \hspace{5pt} {\fontfamily{cmss}\selectfont Manuscript text}
+
+% Modify the number formatting for figures, equations,
+% tables, and listings defined in the response letter so that 
+% these are not confused with references to the manuscript.
+\renewcommand\thefigure{R\arabic{figure}}
+\renewcommand{\theequation}{R\arabic{equation}}
+\renewcommand{\thetable}{R\arabic{table}} 
+\renewcommand\thelstlisting{R\arabic{lstlisting}}
+% Prepend the reviewer question/comment headings with a Q
+\renewcommand\thesubsection{Q\arabic{section}.\arabic{subsection}}
