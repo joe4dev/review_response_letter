@@ -5,7 +5,7 @@ Template for Latex and/or Pandoc to quickly write reviews and (author) response 
 
 Use the examples in folder `RC_to_MS/`.
 
-<img alt="Screenshot of the output PDF of Review Comments to the Manuscript" src="https://github.com/mmmlab/review_response_letter/fig/screenshot-RC_to_MS.png " style="max-width: 100%" />
+<img alt="Screenshot of the output PDF of Review Comments to the Manuscript" src="https://github.com/mmmlab/review_response_letter/blob/master/fig/screenshot-RC_to_MS.png " style="max-width: 100%" />
 
 ### Option A: Latex
 
@@ -36,7 +36,7 @@ Then run `pandoc -s -S --template ../templates/RC_to_MS-pandoc.tex myletter.md -
 
 Use the examples in folder `AR_to_RC/`.
 
-<img alt="Screenshot of the output PDF of a Author Response Letter to Review Comments" src="https://github.com/mmmlab/review_response_letter/fig/screenshot-AR_to_RC.png" style="max-width: 100%" />
+<img alt="Screenshot of the output PDF of a Author Response Letter to Review Comments" src="https://github.com/mmmlab/review_response_letter/blob/master/fig/screenshot-AR_to_RC.png" style="max-width: 100%" />
 
 ### Option A: Latex
 
